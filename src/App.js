@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-import {CardList} from './components/card-list/card-list.component'
+import {CardList} from './components/card-list/card-list.component';
+import {SearchBox} from './components/searchbox/search-box.component';
 import './App.css'
 
 
@@ -17,7 +18,10 @@ const  App =()=> {
 
   return (
     <div className="App">
-        <input type='search' placeholder="search monster" onChange={e=> setSearch(e.target.value)}/>
+        <SearchBox
+            placeholder="search Monsters"
+            handleChange={e=> setSearch(e.target.value)}
+        />
         <CardList monster={filteredMonsters}/>
     </div>
   );
