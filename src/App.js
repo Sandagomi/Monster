@@ -14,13 +14,18 @@ const  App =()=> {
 
     useEffect(()=>{
         axios.get('https://jsonplaceholder.typicode.com/users').then(res=>res.data).then(users=>setMonsters(users));
-    });
+    },[]);
+
+    const handleChange =(e)=> {
+        setSearch(e.target.value)
+    }
 
   return (
     <div className="App">
+        <h1>Monsters Rolodex</h1>
         <SearchBox
             placeholder="search Monsters"
-            handleChange={e=> setSearch(e.target.value)}
+            handleChange={handleChange}
         />
         <CardList monster={filteredMonsters}/>
     </div>
