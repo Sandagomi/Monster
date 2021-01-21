@@ -14,7 +14,7 @@ const  App =()=> {
 
   return (
     <div className="App">
-        <CardList monsters = {monsters} />
+        <CardList monster={monsters}/>
     </div>
   );
 }
